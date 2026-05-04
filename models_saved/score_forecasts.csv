@@ -1,0 +1,39 @@
+bank,current_score,current_label,q1_forecast,q2_forecast,direction,will_cross_threshold,q1_label,q2_label
+AU SMALL FINANCE BANK,100.0,Safe,100.0,100.0,Falling,FALSE,Safe,Safe
+AXIS BANK,96.9,Safe,94.5,93.3,Falling,FALSE,Safe,Safe
+BANDHAN BANK,100.0,Safe,99.9,99.9,Falling,FALSE,Safe,Safe
+BANK OF BARODA,67.7,Caution,68.3,67.9,Rising,FALSE,Caution,Caution
+BANK OF INDIA,70.5,Caution,68.8,70.5,Falling,FALSE,Caution,Caution
+BANK OF MAHARASHTRA,97.3,Safe,94.2,96.7,Falling,FALSE,Safe,Safe
+CANARA BANK,54.2,At-Risk,51.9,52.5,Falling,FALSE,At-Risk,At-Risk
+CENTRAL BANK OF INDIA,87.0,Safe,90.3,91.7,Rising,FALSE,Safe,Safe
+CITY UNION BANK,100.0,Safe,100.0,100.0,Falling,FALSE,Safe,Safe
+CSB BANK,98.6,Safe,98.5,98.5,Falling,FALSE,Safe,Safe
+DCB BANK,62.7,Caution,63.0,62.9,Rising,FALSE,Caution,Caution
+DHANLAXMI BANK,82.7,Safe,85.7,88.0,Rising,FALSE,Safe,Safe
+EQUITAS SMALL FINANCE BANK,100.0,Safe,100.0,100.0,Falling,FALSE,Safe,Safe
+ESAF SMALL FINANCE BANK,83.0,Safe,80.8,79.0,Falling,TRUE,Safe,Caution
+FEDERAL BANK,56.6,At-Risk,56.6,56.6,Falling,FALSE,At-Risk,At-Risk
+HDFC BANK,99.7,Safe,99.7,99.7,Falling,FALSE,Safe,Safe
+ICICI BANK,100.0,Safe,100.0,100.0,Falling,FALSE,Safe,Safe
+IDBI BANK,100.0,Safe,100.0,100.0,Falling,FALSE,Safe,Safe
+IDFC FIRST BANK,99.6,Safe,99.7,99.7,Rising,FALSE,Safe,Safe
+INDIAN BANK,58.7,At-Risk,57.6,56.8,Falling,FALSE,At-Risk,At-Risk
+INDIAN OVERSEAS BANK,99.2,Safe,99.4,99.5,Rising,FALSE,Safe,Safe
+INDUSIND BANK,99.7,Safe,99.7,99.7,Falling,FALSE,Safe,Safe
+KARNATAKA BANK,93.9,Safe,92.1,90.5,Falling,FALSE,Safe,Safe
+KARUR VYSYA BANK,41.3,At-Risk,41.4,41.5,Rising,FALSE,At-Risk,At-Risk
+KOTAK MAHINDRA BANK,100.0,Safe,100.0,100.0,Falling,FALSE,Safe,Safe
+LAKSHMI VILAS BANK,74.6,Caution,80.5,85.0,Rising,FALSE,Safe,Safe
+PUNJAB AND SIND BANK,80.2,Safe,81.0,80.3,Rising,FALSE,Safe,Safe
+PUNJAB NATIONAL BANK,67.2,Caution,66.1,65.5,Falling,FALSE,Caution,Caution
+RBL BANK,99.9,Safe,100.0,100.0,Rising,FALSE,Safe,Safe
+SOUTH INDIAN BANK,97.1,Safe,96.7,96.8,Falling,FALSE,Safe,Safe
+STATE BANK OF INDIA,90.6,Safe,90.8,90.9,Rising,FALSE,Safe,Safe
+SURYODAY SMALL FINANCE BANK,100.0,Safe,100.0,100.0,Falling,FALSE,Safe,Safe
+TAMILNAD MERCANTILE BANK,99.7,Safe,99.9,99.8,Rising,FALSE,Safe,Safe
+UCO BANK,99.5,Safe,100.0,100.0,Rising,FALSE,Safe,Safe
+UJJIVAN SMALL FINANCE BANK,100.0,Safe,100.0,100.0,Falling,FALSE,Safe,Safe
+UNION BANK OF INDIA,52.6,At-Risk,54.2,55.3,Rising,FALSE,At-Risk,At-Risk
+UTKARSH SMALL FINANCE BANK,100.0,Safe,100.0,99.9,Falling,FALSE,Safe,Safe
+YES BANK,99.8,Safe,99.2,98.9,Falling,FALSE,Safe,Safe
