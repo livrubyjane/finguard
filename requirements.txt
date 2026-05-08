@@ -10,7 +10,6 @@ shap==0.44.1
 statsmodels==0.14.1
 scipy==1.11.4
 tensorflow-cpu==2.15.1
-keras==2.15.0
 torch==2.1.0
 transformers==4.37.0
 tokenizers==0.15.2
@@ -29,13 +28,3 @@ httpx==0.26.0
 anyio==4.2.0
 typing_extensions==4.9.0
 protobuf==4.25.3
-absl-py==2.1.0
-flatbuffers==23.5.26
-gast==0.5.4
-google-pasta==0.2.0
-grpcio==1.62.0
-libclang==18.1.1
-ml-dtypes==0.3.2
-opt-einsum==3.3.0
-termcolor==2.4.0
-wrapt==1.16.0
