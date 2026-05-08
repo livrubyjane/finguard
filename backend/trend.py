@@ -3,7 +3,7 @@ import joblib
 import tensorflow as tf
 import pandas as pd
 
-LSTM_PATH = 'models_saved/lstm_trend_model.keras'
+LSTM_PATH = 'models_saved/lstm_trend_model.h5'
 SCALER_PATH = 'models_saved/scaler_lstm.pkl'
 
 feature_cols = ['npa_ratio', 'car', 'roa', 'liquidity_coverage',
