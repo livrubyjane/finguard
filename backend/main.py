@@ -6,6 +6,7 @@ import numpy as np
 from backend.scorer import compute_finguard_score, feature_cols
 from backend.trend import predict_trend
 from backend.forecast import forecast_score
+from backend.news import get_news_and_sentiment
 
 app = FastAPI(title="FinGuard API", version="1.0.0")
 
@@ -133,6 +134,11 @@ def compare_banks(banks: str):
             'shap_values': score_result['shap_values'],
         })
     return results
+
+@app.get("/bank/{bank_name}/news")
+def get_news(bank_name: str):
+    bank_name = bank_name.upper().replace('-', ' ')
+    return get_news_and_sentiment(bank_name)
 
 class RatiosInput(BaseModel):
     npa_ratio: float
