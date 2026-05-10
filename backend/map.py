@@ -15,120 +15,63 @@ router = APIRouter()
 # Bank → Region mapping  (HQ-based, 70+ banks across 20 regions)
 # ---------------------------------------------------------------------------
 BANK_REGION_MAP = {
-
     # ── Maharashtra ─────────────────────────────────────────────────────────
-    "Bank of Maharashtra":          "Maharashtra",
-    "Central Bank of India":        "Maharashtra",
-    "Union Bank of India":          "Maharashtra",
-    "IDBI Bank":                    "Maharashtra",
-    "Axis Bank":                    "Maharashtra",
-    "Kotak Mahindra Bank":          "Maharashtra",
-    "HDFC Bank":                    "Maharashtra",
-    "Yes Bank":                     "Maharashtra",
-    "IndusInd Bank":                "Maharashtra",
-    "Bank of India":                "Maharashtra",
-    "State Bank of India":          "Maharashtra",
-    "RBL Bank":                     "Maharashtra",
-    "ESAF Small Finance Bank":      "Maharashtra",
+    "BANK OF MAHARASHTRA":          "Maharashtra",
+    "CENTRAL BANK OF INDIA":        "Maharashtra",
+    "UNION BANK OF INDIA":          "Maharashtra",
+    "IDBI BANK":                    "Maharashtra",
+    "AXIS BANK":                    "Maharashtra",
+    "KOTAK MAHINDRA BANK":          "Maharashtra",
+    "HDFC BANK":                    "Maharashtra",
+    "YES BANK":                     "Maharashtra",
+    "INDUSIND BANK":                "Maharashtra",
+    "BANK OF INDIA":                "Maharashtra",
+    "STATE BANK OF INDIA":          "Maharashtra",
+    "RBL BANK":                     "Maharashtra",
+    "ESAF SMALL FINANCE BANK":      "Maharashtra",
 
     # ── Delhi / NCR ─────────────────────────────────────────────────────────
-    "Punjab National Bank":         "Delhi",
-    "Oriental Bank of Commerce":    "Delhi",
-    "Saraswat Bank":                "Delhi",
-    "New India Co-operative Bank":  "Delhi",
+    "PUNJAB NATIONAL BANK":         "Delhi",
 
     # ── West Bengal ─────────────────────────────────────────────────────────
-    "UCO Bank":                     "West Bengal",
-    "United Bank of India":         "West Bengal",
-    "Allahabad Bank":               "West Bengal",
-    "Bandhan Bank":                 "West Bengal",
+    "UCO BANK":                     "West Bengal",
+    "BANDHAN BANK":                 "West Bengal",
 
     # ── Tamil Nadu ──────────────────────────────────────────────────────────
-    "Indian Bank":                  "Tamil Nadu",
-    "Indian Overseas Bank":         "Tamil Nadu",
-    "City Union Bank":              "Tamil Nadu",
-    "Lakshmi Vilas Bank":           "Tamil Nadu",
-    "Tamilnad Mercantile Bank":     "Tamil Nadu",
-    "Karur Vysya Bank":             "Tamil Nadu",
-    "Equitas Small Finance Bank":   "Tamil Nadu",
+    "INDIAN BANK":                  "Tamil Nadu",
+    "INDIAN OVERSEAS BANK":         "Tamil Nadu",
+    "CITY UNION BANK":              "Tamil Nadu",
+    "LAKSHMI VILAS BANK":           "Tamil Nadu",
+    "TAMILNAD MERCANTILE BANK":     "Tamil Nadu",
+    "KARUR VYSYA BANK":             "Tamil Nadu",
+    "EQUITAS SMALL FINANCE BANK":   "Tamil Nadu",
 
     # ── Karnataka ───────────────────────────────────────────────────────────
-    "Canara Bank":                  "Karnataka",
-    "Syndicate Bank":               "Karnataka",
-    "Vijaya Bank":                  "Karnataka",
-    "Corporation Bank":             "Karnataka",
-    "Karnataka Bank":               "Karnataka",
-    "Shivalik Small Finance Bank":  "Karnataka",
+    "CANARA BANK":                  "Karnataka",
+    "KARNATAKA BANK":               "Karnataka",
 
     # ── Kerala ──────────────────────────────────────────────────────────────
-    "South Indian Bank":            "Kerala",
-    "Federal Bank":                 "Kerala",
-    "Catholic Syrian Bank":         "Kerala",
-    "Dhanlaxmi Bank":               "Kerala",
-    "Kerala Gramin Bank":           "Kerala",
+    "SOUTH INDIAN BANK":            "Kerala",
+    "FEDERAL BANK":                 "Kerala",
+    "CSB BANK":                     "Kerala",
+    "DHANLAXMI BANK":               "Kerala",
 
     # ── Gujarat ─────────────────────────────────────────────────────────────
-    "Bank of Baroda":               "Gujarat",
-    "Dena Bank":                    "Gujarat",
-    "Saurashtra Gramin Bank":       "Gujarat",
-    "Gujarat State Co-op Bank":     "Gujarat",
-
-    # ── Andhra Pradesh ──────────────────────────────────────────────────────
-    "Andhra Bank":                  "Andhra Pradesh",
-    "Andhra Pradesh Grameena Vikas Bank": "Andhra Pradesh",
-    "Saptagiri Grameena Bank":      "Andhra Pradesh",
-
-    # ── Telangana ───────────────────────────────────────────────────────────
-    "Telangana Grameena Bank":      "Telangana",
-    "Deccan Grameena Bank":         "Telangana",
+    "BANK OF BARODA":               "Gujarat",
 
     # ── Punjab ──────────────────────────────────────────────────────────────
-    "Punjab & Sind Bank":           "Punjab",
-    "Punjab Gramin Bank":           "Punjab",
-    "Sutlej Gramin Bank":           "Punjab",
+    "PUNJAB AND SIND BANK":         "Punjab",
 
-    # ── Rajasthan ───────────────────────────────────────────────────────────
-    "Bank of Rajasthan":            "Rajasthan",
-    "Baroda Rajasthan Kshetriya Gramin Bank": "Rajasthan",
-    "Rajasthan Marudhara Gramin Bank": "Rajasthan",
+    # ── Tamil Nadu (Small Finance) ───────────────────────────────────────────
+    "AU SMALL FINANCE BANK":        "Rajasthan",
+    "UJJIVAN SMALL FINANCE BANK":   "Karnataka",
+    "SURYODAY SMALL FINANCE BANK":  "Maharashtra",
+    "UTKARSH SMALL FINANCE BANK":   "Uttar Pradesh",
 
-    # ── Uttar Pradesh ───────────────────────────────────────────────────────
-    "Baroda UP Bank":               "Uttar Pradesh",
-    "Prathama UP Gramin Bank":      "Uttar Pradesh",
-    "Aryavart Bank":                "Uttar Pradesh",
-
-    # ── Madhya Pradesh ──────────────────────────────────────────────────────
-    "Central Madhya Pradesh Gramin Bank": "Madhya Pradesh",
-    "Madhyanchal Gramin Bank":      "Madhya Pradesh",
-
-    # ── Odisha ──────────────────────────────────────────────────────────────
-    "Odisha Gramya Bank":           "Odisha",
-    "Utkal Grameen Bank":           "Odisha",
-
-    # ── Assam / North-East ──────────────────────────────────────────────────
-    "Assam Gramin Vikash Bank":     "Assam",
-    "Nagaland Rural Bank":          "Assam",
-    "Meghalaya Rural Bank":         "Assam",
-
-    # ── Jharkhand ───────────────────────────────────────────────────────────
-    "Jharkhand Rajya Gramin Bank":  "Jharkhand",
-
-    # ── Bihar ───────────────────────────────────────────────────────────────
-    "Dakshin Bihar Gramin Bank":    "Bihar",
-    "Uttar Bihar Gramin Bank":      "Bihar",
-
-    # ── Himachal Pradesh ────────────────────────────────────────────────────
-    "Himachal Pradesh Gramin Bank": "Himachal Pradesh",
-
-    # ── Jammu & Kashmir ─────────────────────────────────────────────────────
-    "J&K Bank":                     "Jammu & Kashmir",
-    "J&K Grameen Bank":             "Jammu & Kashmir",
-
-    # ── Haryana ─────────────────────────────────────────────────────────────
-    "Sarva Haryana Gramin Bank":    "Haryana",
-
-    # ── Chhattisgarh ────────────────────────────────────────────────────────
-    "Chhattisgarh Rajya Gramin Bank": "Chhattisgarh",
+    # ── Others ──────────────────────────────────────────────────────────────
+    "ICICI BANK":                   "Maharashtra",
+    "DCB BANK":                     "Maharashtra",
+    "IDFC FIRST BANK":              "Maharashtra",
 }
 
 # ---------------------------------------------------------------------------
@@ -138,198 +81,198 @@ BANK_REGION_MAP = {
 BANK_HOVER_BLURB: dict[str, str] = {
 
     # Maharashtra
-    "Yes Bank": (
+    "YES BANK": (
         "Yes Bank collapsed in March 2020 after years of concealing bad loans "
         "through accounting tricks. The RBI forced an emergency rescue involving "
         "SBI and other banks. It has stabilised since, but remains under close watch."
     ),
-    "IDBI Bank": (
+    "IDBI BANK": (
         "IDBI carried one of the highest NPA ratios among large Indian banks through "
         "the late 2010s. LIC took a majority stake in 2019 to avert a deeper crisis. "
         "Privatisation talks are ongoing as of 2024."
     ),
-    "Central Bank of India": (
+    "CENTRAL BANK OF INDIA": (
         "Central Bank spent five years under RBI's Prompt Corrective Action framework "
         "from 2017 to 2022, restricted from lending freely due to bad loans. "
         "It has exited PCA but stress indicators remain elevated."
     ),
-    "Bank of India": (
+    "BANK OF INDIA": (
         "Bank of India's gross NPA peaked above 16% during 2016–2019, "
         "making it one of the worst-hit public-sector lenders of that era. "
         "Government capital infusions helped stabilise it, but profitability recovery has been slow."
     ),
-    "Bank of Maharashtra": (
+    "BANK OF MAHARASHTRA": (
         "Bank of Maharashtra is a mid-sized public-sector bank that narrowly avoided "
         "PCA restrictions through government support. It has shown steady improvement "
         "in asset quality since 2020 and returned to profit."
     ),
-    "RBL Bank": (
+    "RBL BANK": (
         "RBL Bank, a fast-growing private lender, ran into trouble in 2022 when its "
         "CEO resigned abruptly and the RBI stepped in to appoint a new one. "
         "Asset quality stress in its microfinance and credit card book remains a concern."
     ),
-    "Union Bank of India": (
+    "UNION BANK OF INDIA": (
         "Union Bank absorbed Andhra Bank and Corporation Bank in 2020, making it one of "
         "India's largest public-sector lenders by asset size. Post-merger integration "
         "pressures weighed on its metrics through 2022."
     ),
 
     # Delhi
-    "Punjab National Bank": (
+    "PUNJAB NATIONAL BANK": (
         "PNB was at the centre of India's biggest banking fraud in 2018, "
         "when the Nirav Modi scam exposed ₹14,000 crore in fraudulent guarantees. "
         "Subsequent mergers and recapitalisation have partially restored its health."
     ),
-    "Oriental Bank of Commerce": (
+    "ORIENTAL BANK OF COMMERCE": (
         "OBC was merged into Punjab National Bank in April 2020 as part of India's "
         "bank consolidation programme. Its NPA ratios were elevated during 2017–2019, "
         "which weakened the combined entity's starting position."
     ),
 
     # West Bengal
-    "UCO Bank": (
+    "UCO BANK": (
         "UCO Bank was under RBI's PCA framework from 2017 to 2019 due to high NPAs "
         "and negative return on assets. It exited PCA in 2019 but remains "
         "among the weaker public-sector banks in asset quality terms."
     ),
-    "United Bank of India": (
+    "UNITED BANK OF INDIA": (
         "United Bank struggled with NPAs above 15% and thin capital buffers for years "
         "before being merged into Punjab National Bank in 2020. "
         "Its weak state was a key driver behind the government's consolidation push."
     ),
-    "Bandhan Bank": (
+    "BANDHAN BANK": (
         "Bandhan Bank grew rapidly from a microfinance institution into a full-service bank "
         "but its heavy reliance on micro-loans creates vulnerability during downturns. "
         "Its NPA ratio spiked sharply after the COVID-19 disruption of 2020–21."
     ),
-    "Allahabad Bank": (
+    "ALLAHABAD BANK": (
         "Allahabad Bank, one of India's oldest banks, was merged into Indian Bank in 2020. "
         "It had been under PCA from 2018 with a high NPA ratio and dwindling capital. "
         "The merger was designed to create a stronger combined South-based entity."
     ),
 
     # Tamil Nadu
-    "Lakshmi Vilas Bank": (
+    "LAKSHMI VILAS BANK": (
         "Lakshmi Vilas Bank was placed under a moratorium in November 2020 "
         "after years of rising NPAs, failed merger attempts, and governance failures. "
         "DBS Bank India rescued it through an RBI-orchestrated acquisition."
     ),
-    "Indian Overseas Bank": (
+    "INDIAN OVERSEAS BANK": (
         "Indian Overseas Bank spent six years under PCA — from 2015 to 2021 — "
         "the longest stint of any Indian bank in the corrective framework. "
         "Its NPA ratio peaked near 23% in 2018 before a gradual turnaround began."
     ),
-    "Karur Vysya Bank": (
+    "KARUR VYSYA BANK": (
         "Karur Vysya Bank is a mid-sized private lender with a strong South India franchise. "
         "It faced NPA stress between 2018 and 2021 driven by MSME and jewellery loans, "
         "but has recovered steadily since with improving profitability."
     ),
-    "Indian Bank": (
+    "INDIAN BANK": (
         "Indian Bank absorbed Allahabad Bank in 2020 to become a much larger lender. "
         "It has historically maintained relatively conservative underwriting standards "
         "and has shown consistent improvement in key health metrics since the merger."
     ),
 
     # Karnataka
-    "Canara Bank": (
+    "CANARA BANK": (
         "Canara Bank absorbed Syndicate Bank in the 2020 merger wave, becoming "
         "India's fourth-largest public-sector bank. NPA levels were high between "
         "2016 and 2019, but recapitalisation and merger synergies have improved its standing."
     ),
-    "Vijaya Bank": (
+    "VIJAYA BANK": (
         "Vijaya Bank was merged into Bank of Baroda in April 2019 in India's first "
         "three-way bank merger. It was broadly healthy at the time of the merger, "
         "absorbed mainly to strengthen the combined entity's reach in South India."
     ),
-    "Corporation Bank": (
+    "CORPORATION BANK": (
         "Corporation Bank was merged into Union Bank of India in April 2020. "
         "Like many public-sector peers, it had elevated NPAs during 2017–2019 "
         "and required capital support from the government before the merger."
     ),
-    "Karnataka Bank": (
+    "KARNATAKA BANK": (
         "Karnataka Bank is an independent private-sector bank serving South India. "
         "It has maintained moderate profitability but faces pressure from competition "
         "by larger private banks encroaching on its home market."
     ),
 
     # Kerala
-    "Dhanlaxmi Bank": (
+    "DHANLAXMI BANK": (
         "Dhanlaxmi Bank has faced repeated governance crises and board-level disputes "
         "since 2010, making it one of India's most troubled small private banks. "
         "Its capital adequacy and profitability have remained persistently weak."
     ),
-    "Federal Bank": (
+    "FEDERAL BANK": (
         "Federal Bank is one of Kerala's strongest private lenders, "
         "with consistent profitability and improving asset quality since 2020. "
         "It is expanding aggressively in retail and NRI banking across India."
     ),
-    "South Indian Bank": (
+    "SOUTH INDIAN BANK": (
         "South Indian Bank went through significant NPA stress between 2019 and 2022, "
         "partly from a troubled corporate loan book. A turnaround plan is underway "
         "with focus on retail lending and digital banking."
     ),
-    "Catholic Syrian Bank": (
+    "CATHOLIC SYRIAN BANK": (
         "Catholic Syrian Bank is a small Kerala-based private lender with a loyal "
         "NRI customer base. It has faced periodic capital adequacy concerns "
         "but remains community-oriented and locally influential."
     ),
 
     # Gujarat
-    "Bank of Baroda": (
+    "BANK OF BARODA": (
         "Bank of Baroda merged with Vijaya Bank and Dena Bank in 2019, "
         "creating India's third-largest public-sector bank by assets. "
         "Integration challenges initially weighed on metrics, but the recovery since has been solid."
     ),
-    "Dena Bank": (
+    "DENA BANK": (
         "Dena Bank was placed under PCA in 2017 due to high NPAs and persistent losses, "
         "and was subsequently folded into Bank of Baroda in 2019. "
         "At the time of merger it was one of the weakest public-sector lenders."
     ),
 
     # Andhra Pradesh
-    "Andhra Bank": (
+    "ANDHRA BANK": (
         "Andhra Bank was merged into Union Bank of India in April 2020. "
         "It carried a stressed loan book with NPA ratios above 15% "
         "in the years leading up to the merger."
     ),
 
     # Punjab
-    "Punjab & Sind Bank": (
+    "PUNJAB & SIND BANK": (
         "Punjab & Sind Bank is a small government-owned lender primarily serving "
         "Punjab and the Sikh community. It has weak profitability metrics "
         "but benefits from implicit sovereign support."
     ),
 
     # Jammu & Kashmir
-    "J&K Bank": (
+    "J&K BANK": (
         "J&K Bank is the dominant lender in Jammu & Kashmir, controlled by the "
         "state government. Political uncertainty and regional economic disruptions "
         "post-2019 pushed its NPA levels significantly higher."
     ),
 
     # Rajasthan
-    "Bank of Rajasthan": (
+    "BANK OF RAJASTHAN": (
         "Bank of Rajasthan was a private lender that was absorbed by ICICI Bank "
         "in 2010 after RBI raised concerns about governance and related-party lending. "
         "It was one of the earlier examples of a private bank rescue in India."
     ),
 
     # Odisha
-    "Odisha Gramya Bank": (
+    "ODISHA GRAMYA BANK": (
         "Odisha Gramya Bank is a regional rural bank serving one of India's "
         "less financially included states. It focuses on agricultural lending "
         "and faces seasonal NPA volatility tied to monsoon cycles."
     ),
 
     # Bihar
-    "Dakshin Bihar Gramin Bank": (
+    "DAKSHIN BIHAR GRAMIN BANK": (
         "Dakshin Bihar Gramin Bank serves the southern districts of Bihar, "
         "one of India's most underbanked regions. Its loan book is dominated "
         "by small agricultural and priority-sector borrowers."
     ),
 
     # Assam
-    "Assam Gramin Vikash Bank": (
+    "ASSAM GRAMIN VIKASH BANK": (
         "Assam Gramin Vikash Bank is the primary rural lender in Assam, "
         "covering a geographically vast and flood-prone region. "
         "Agricultural loan defaults spike sharply in years with poor monsoons or floods."
