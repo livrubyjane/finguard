@@ -10,6 +10,10 @@ from backend.news import get_news_and_sentiment
 
 app = FastAPI(title="FinGuard API", version="1.0.0")
 
+from map import router as map_router          # alongside your other router imports
+
+app.include_router(map_router)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
