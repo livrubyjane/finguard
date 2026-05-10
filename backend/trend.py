@@ -1,7 +1,9 @@
 import numpy as np
 import joblib
-import tensorflow as tf
 import pandas as pd
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from lstm_inference import LSTMModel
 
 LSTM_PATH = 'models_saved/lstm_trend_model.keras'
 SCALER_PATH = 'models_saved/scaler_lstm.pkl'
@@ -18,7 +20,7 @@ feature_cols = [
 SEQUENCE_LENGTH = 12
 
 # Load model and scaler
-model = tf.keras.models.load_model(LSTM_PATH)
+model = LSTMModel(weights_path='models_saved/lstm_weights.npz')
 scaler_seq = joblib.load(SCALER_PATH)
 
 
@@ -40,7 +42,7 @@ def predict_trend(bank_name, df):
         len(feature_cols)
     )
 
-    prob = model.predict(seq_scaled, verbose=0)[0][0]
+    prob = float(model.predict(seq_scaled)[0])
 
     direction = (
         'Improving'
