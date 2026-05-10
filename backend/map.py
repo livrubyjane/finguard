@@ -373,11 +373,11 @@ def _get_all_bank_scores() -> pd.DataFrame:
             detail="scorer module not available — ensure scorer.py is on PYTHONPATH",
         )
     try:
-        df = pd.read_csv("finguard_quarterly_interpolated.csv")
+        df = pd.read_csv("finguard_dataset.csv")
     except FileNotFoundError:
         raise HTTPException(
             status_code=503,
-            detail="finguard_quarterly_interpolated.csv not found",
+            detail="finguard_dataset.csv not found",
         )
 
     latest = (
@@ -412,11 +412,11 @@ def _score_at_quarter(year: int, quarter: int) -> pd.DataFrame:
     except ImportError:
         raise HTTPException(status_code=503, detail="scorer module unavailable")
     try:
-        raw = pd.read_csv("finguard_quarterly_interpolated.csv")
+        raw = pd.read_csv("finguard_dataset.csv")
     except FileNotFoundError:
         raise HTTPException(
             status_code=503,
-            detail="finguard_quarterly_interpolated.csv not found",
+            detail="finguard_dataset.csv not found",
         )
 
     raw = raw[(raw["year"] == year) & (raw["quarter"] == quarter)]
